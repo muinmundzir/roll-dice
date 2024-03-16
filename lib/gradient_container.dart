@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice/styled_text.dart';
 
 class GradientContainer extends StatelessWidget {
   // const GradientContainer({key}) : super(key: key);
@@ -8,6 +7,8 @@ class GradientContainer extends StatelessWidget {
   const GradientContainer(this.colors, {super.key});
 
   final List<Color> colors;
+
+  void rollDice() {}
 
   @override
   Widget build(context) {
@@ -19,8 +20,25 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: const Center(
-        child: StyledText('Hello World!'),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/dice-2.png',
+              width: 200,
+            ),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.only(top: 20),
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(fontSize: 28),
+              ),
+              child: const Text('Roll Dice'),
+            )
+          ],
+        ),
       ),
     );
   }
