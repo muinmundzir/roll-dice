@@ -3,8 +3,7 @@ import 'package:roll_dice/dice_roller.dart';
 
 class GradientContainer extends StatelessWidget {
   // const GradientContainer({key}) : super(key: key);
-
-  // same as above
+  // this code below will give same result as above
   const GradientContainer(this.colors, {super.key});
 
   final List<Color> colors;
